@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestNG Load Testing Suite for Report">
+    <listeners>
+        <listener class-name="com.epam.task3.utils.CustomTestListener"/>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+
+    <test name="GmailTests" parallel="instances">
+        <classes>
+            <class name="com.epam.task3.DraftGmailTest">
+            </class>
+        </classes>
+    </test>
+    <test name="Must Fail Test">
+        <classes>
+            <class name="com.epam.task3.MustFailTest">
+            </class>
+        </classes>
+    </test>
+</suite>
